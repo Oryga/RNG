@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RNG Every 0.5s</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="rng">Loading...</div>
+
+  <script>
+    function updateRNG() {
+      const rng = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("rng").textContent = rng;
+    }
+
+    updateRNG(); // initial call
+    setInterval(updateRNG, 500); // update every 500ms
+  </script>
+</body>
+</html>
